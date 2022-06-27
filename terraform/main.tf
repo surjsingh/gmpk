@@ -1,4 +1,4 @@
-----Core Infrastructure file----#
+#----Core Infrastructure file----#
 terraform {
   backend "s3" {
     bucket = "terraform-cloudy-remote-state"
@@ -42,20 +42,23 @@ module "bastion" {
   instance_type_bastion        = var.instance_type_bastion
   public_subnet_id             = module.vpc.vpc_public_subnet
   key_name                     = var.key_name
+  desired_capacity             = var.bastion_desired_capacity
+  min_size                     = var.bastion_min_size
+  max_size                     = var.bastion_max_size
   iam_instance_profile_bastion = module.iam.iam_instance_profile_bastion
 }
 
-module "serviceOne" {
-  source = "./modules/serviceOne"
+# module "serviceOne" {
+#   source = "./modules/serviceOne"
 
-  product                         = var.product
-  region                          = var.region
-  environment                     = var.environment
-  vpc_id                          = module.vpc.vpc_id
-  ami_serviceOne                  = var.ami_serviceOne
-  instance_type_serviceOne        = var.instance_type_serviceOne
-  private_subnet_id               = module.vpc.vpc_private_subnet
-  key_name                        = var.key_name
-  iam_instance_profile_serviceOne = module.iam.iam_instance_profile_serviceOne
-  bastion-sg                      = module.bastion.bastion-sg-id
-}
+#   product                         = var.product
+#   region                          = var.region
+#   environment                     = var.environment
+#   vpc_id                          = module.vpc.vpc_id
+#   ami_serviceOne                  = var.ami_serviceOne
+#   instance_type_serviceOne        = var.instance_type_serviceOne
+#   private_subnet_id               = module.vpc.vpc_private_subnet
+#   key_name                        = var.key_name
+#   iam_instance_profile_serviceOne = module.iam.iam_instance_profile_serviceOne
+#   bastion-sg                      = module.bastion.bastion-sg-id
+# }

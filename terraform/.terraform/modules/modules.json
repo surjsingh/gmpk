@@ -1,1 +1,0 @@
-{"Modules":[{"Key":"vpc","Source":"./modules/vpc","Dir":"modules/vpc"},{"Key":"","Source":"","Dir":"."},{"Key":"bastion","Source":"./modules/bastion","Dir":"modules/bastion"},{"Key":"iam","Source":"./modules/iam","Dir":"modules/iam"},{"Key":"serviceOne","Source":"./modules/serviceOne","Dir":"modules/serviceOne"}]}

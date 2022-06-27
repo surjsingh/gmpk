@@ -69,9 +69,9 @@ resource "aws_launch_configuration" "bastion" {
 resource "aws_autoscaling_group" "bastion" {
   name                      = "${var.product}-${var.environment}-bastion"
   vpc_zone_identifier       = var.public_subnet_id
-  desired_capacity          = "0"
-  min_size                  = "0"
-  max_size                  = "1"
+  desired_capacity          = var.desired_capacity
+  min_size                  = var.min_size
+  max_size                  = var.max_size
   health_check_grace_period = "60"
   health_check_type         = "EC2"
   force_delete              = false

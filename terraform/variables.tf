@@ -169,17 +169,29 @@ locals {
 # Bastion
 
 variable "ami_bastion" {
-  default = "ami-4fffc834" # make sure the image exists in your aws region
+  default = "ami-0cff7528ff583bf9a" # make sure the image exists in your aws region
 }
 
 variable "instance_type_bastion" {
   default = "t2.micro"
 }
 
+variable "bastion_desired_capacity" {
+  default = "1"
+}
+variable "bastion_min_size" {
+  default = "1"
+}
+variable "bastion_max_size" {
+  default = "1"
+}
+
+
+
 #serviceOne
 
 variable "ami_serviceOne" {
-  default = "ami-4fffc834" # make sure the image exists in your aws region
+  default = "ami-0cff7528ff583bf9a" # make sure the image exists in your aws region
 }
 
 variable "instance_type_serviceOne" {

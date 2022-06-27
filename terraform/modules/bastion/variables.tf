@@ -34,3 +34,7 @@ variable "public_subnet_id" {
   type    = list
   default = []
 }
+
+variable "desired_capacity" {}
+variable "min_size" {}
+variable "max_size" {}
